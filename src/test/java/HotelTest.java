@@ -60,13 +60,14 @@ public class HotelTest {
     }
 
 
-//    @Test
-//    public void canSeeTheVacantRooms() {
-//        hotel.addRoom(bedroom1);
-//        hotel.addRoom(bedroom2);
-//        hotel.checkInGuest(guest1);
-//        hotel.checkInGuest(guest2);
-////        hotel.checkInGuest(guest3);
-//        assertEquals(1, hotel.VacantRoomList());
-//    }
+    @Test
+    public void canSeeTheVacantRooms() {
+        hotel.addRoom(bedroom1);
+        hotel.addRoom(bedroom2);
+        hotel.checkInGuest(guest1);
+        hotel.checkInGuest(guest2);
+//        hotel.checkInGuest(guest3);
+        assertEquals(1, hotel.VacantRoomList());
+    }
+
 }

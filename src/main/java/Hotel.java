@@ -39,8 +39,9 @@ public class Hotel {
 //        }
 
         for (Bedroom bedroom : bedroomList){
-            if (bedroom.getNumberOfGuest() == 0) {
+            if (bedroom.getNumberOfGuest() < bedroom.getCapacity()) {
                 bedroom.checkInGuest(guest);
+                return;
             }
         }
     }
