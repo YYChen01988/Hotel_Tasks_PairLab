@@ -9,22 +9,38 @@ public class HotelTest {
     Conferenceroom conferenceroom;
     DinningRoom dinningRoom;
     Bedroom bedroom1,bedroom2, bedroom3;
+    Guest guest;
 
     @Before
     public void before(){
         hotel = new Hotel(conferenceroom, dinningRoom);
-        conferenceroom = new Conferenceroom("White Lily", 80);
+        conferenceroom = new Conferenceroom("White Lily", 80, 70);
         dinningRoom = new DinningRoom();
-        bedroom1 = new Bedroom("Double", 50);
-        bedroom2 = new Bedroom("Single", 40);
-        bedroom3 = new Bedroom("Double", 80);
+        guest = new Guest();
+        bedroom1 = new Bedroom("Double", 50, 2, "001");
+        bedroom2 = new Bedroom("Single", 40, 1, "002");
+        bedroom3 = new Bedroom("Double", 80, 2, "003");
     }
 
-//  hotel should have a list of rooms are occupied(add room function and then if guest number is >=0
+    @Test
+    public void canGetNumberOfRooms() {
+        assertEquals(0, hotel.getBedroomNumber());
+    }
 
-//    @Test
-//    public void canCheckInGuestToRoom() {
-//        hotel.checkInGuest();
-//        assertEquals(1, bedroom1.getNumberOfGuest());
-//    }
+    @Test
+    public void canAddRooms() {
+        hotel.addRoom(bedroom1);
+        assertEquals(1,hotel.getBedroomNumber());
+    }
+
+    @Test
+    public void canCheckInGuestToRoom() {
+        hotel.addRoom(bedroom1);
+        hotel.checkInGuest(guest);
+        bedroom1.checkInGuest(guest);
+        assertEquals(1, bedroom1.getNumberOfGuest());
+    }
+
+
+
 }

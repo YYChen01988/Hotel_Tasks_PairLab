@@ -3,11 +3,14 @@ import java.util.ArrayList;
 public class Conferenceroom {
     private String name;
     private int dayrate;
+    private int capacity;
+
     private ArrayList<Guest> conferenceroomGuestList;
 
-    public Conferenceroom(String name, int dayrate){
+    public Conferenceroom(String name, int dayrate, int capacity){
         this.name = name;
         this.dayrate = dayrate;
+        this.capacity =capacity;
         this.conferenceroomGuestList =new ArrayList<>();
     }
 
