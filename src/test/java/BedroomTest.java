@@ -11,9 +11,9 @@ public class BedroomTest {
     @Before
     public void before(){
         bedroom = new Bedroom("Double", 30);
-        guest1 = new Guest();
-        guest2 = new Guest();
-        guest3 = new Guest();
+        guest1 = new Guest(null);
+        guest2 = new Guest(null);
+        guest3 = new Guest(null);
     }
 
     @Test

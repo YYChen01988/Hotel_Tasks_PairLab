@@ -10,9 +10,9 @@ public class ConferenceroomTest {
     @Before
     public void before(){
         conferenceroom = new Conferenceroom("White Elizabeth", 100);
-        guest1 = new Guest();
-        guest2 = new Guest();
-        guest3 = new Guest();
+        guest1 = new Guest(null);
+        guest2 = new Guest(null);
+        guest3 = new Guest(null);
     }
 
     @Test
