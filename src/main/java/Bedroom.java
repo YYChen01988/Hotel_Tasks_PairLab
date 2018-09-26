@@ -20,6 +20,10 @@ public class Bedroom {
         return type;
     }
 
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
     public int getCapacity() {
         return capacity;
     }

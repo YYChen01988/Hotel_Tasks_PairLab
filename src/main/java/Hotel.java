@@ -55,12 +55,17 @@ public class Hotel {
     }
 
 
-    public void VacantRoomList() {
-        ArrayList<Bedroom> VacantRoom = new ArrayList<>();
+    public int VacantRoomList() {
+        ArrayList<Bedroom> vacantRoomList = new ArrayList<>();
         for (Bedroom bedroom : bedroomList){
             if (bedroom.getNumberOfGuest() == 0) {
-                VacantRoom.add(bedroom);
+                //String roomNumber = bedroom.getRoomNumber();
+                vacantRoomList.add(bedroom);
             }
         }
+        return vacantRoomList.size();
     }
+
+
+
 }
