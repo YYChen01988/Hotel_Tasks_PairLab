@@ -23,13 +23,44 @@ public class Hotel {
         bedroomList.add(bedroom);
     }
 
+    public boolean checkIfRoomIsEmpty(Bedroom bedroom){
+        if (bedroom.getNumberOfGuest() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public void checkInGuest(Guest guest) {
-        for (int i= 0; i< bedroomList.size(); i++){
-            if (bedroomList.get(i).getNumberOfGuest()> 0){
-                bedroomList.get(i).checkInGuest(guest);
+//        for (int i = 0; i < bedroomList.size(); i++) {
+//            if (bedroomList.get(i).getNumberOfGuest() == 0) {
+//                bedroomList.get(i).checkInGuest(guest);
+//            }
+//        }
+
+        for (Bedroom bedroom : bedroomList){
+            if (bedroom.getNumberOfGuest() == 0) {
+                bedroom.checkInGuest(guest);
             }
         }
     }
 
 
+    public void checkOutGuest(Guest guest) {
+        for (Bedroom bedroom : bedroomList){
+            if (bedroom.getNumberOfGuest() > 0) {
+                bedroom.checkOutGuest(guest);
+            }
+        }
+    }
+
+
+    public void VacantRoomList() {
+        ArrayList<Bedroom> VacantRoom = new ArrayList<>();
+        for (Bedroom bedroom : bedroomList){
+            if (bedroom.getNumberOfGuest() == 0) {
+                VacantRoom.add(bedroom);
+            }
+        }
+    }
 }

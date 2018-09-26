@@ -34,13 +34,36 @@ public class HotelTest {
     }
 
     @Test
+    public void canCheckTheRoomIsEmpty() {
+        hotel.addRoom(bedroom1);
+        assertEquals(true, hotel.checkIfRoomIsEmpty(bedroom1));
+    }
+
+    @Test
     public void canCheckInGuestToRoom() {
         hotel.addRoom(bedroom1);
+        hotel.addRoom(bedroom2);
         hotel.checkInGuest(guest);
-        bedroom1.checkInGuest(guest);
         assertEquals(1, bedroom1.getNumberOfGuest());
     }
 
+    @Test
+    public void canCheckOutGuest() {
+        hotel.addRoom(bedroom1);
+        hotel.addRoom(bedroom2);
+        hotel.checkInGuest(guest);
+        hotel.checkOutGuest(guest);
+        assertEquals(0, bedroom1.getNumberOfGuest());
+    }
 
-
+    @Test
+    public void canSeeTheVacantRooms() {
+        hotel.addRoom(bedroom1);
+        hotel.addRoom(bedroom2);
+        hotel.checkInGuest(guest);
+        hotel.checkInGuest(guest);
+        hotel.checkInGuest(guest);
+        hotel.VacantRoomList();
+        assertEquals(2, hotel.getBedroomNumber());
+    }
 }
