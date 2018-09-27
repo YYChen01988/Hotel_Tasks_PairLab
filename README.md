@@ -27,3 +27,25 @@ Add functionality to check in guests to bedrooms for a number of nights.
 Any other extensions you may wish to add.
 Remember
 Use TDD, with separate test files for each class.
+
+
+
+
+# Introduction to Debugging in IntelliJ
+
+Learning Objectives
+Know how to debug a Java application
+Understand breakpoints
+Understand the debugger console
+Know how to evaluate code fragments
+Task
+As an introduction to debugging:
+
+watch the following video: https://www.youtube.com/watch?v=ErVZrVWZrko&feature=youtu.be
+Answer the following questions:
+
+What is the purpose of a breakpoint?
+Does the line of code on a breakpoint run when you start debugging?
+How do we debug the next line of code?
+What does the step into command do?
+What is the difference between evaluate expression and evaluate code fragment?
